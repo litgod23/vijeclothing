@@ -143,7 +143,7 @@ body {
 .hero-title {
   font-family: "Cinzel", serif;
   font-size: 4rem;
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 255);
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: 2px;
   margin-top: 6vh;
@@ -570,8 +570,8 @@ body {
 
   .hero-title {
     top: 40%;
-    font-size: 2rem;
-    color: #fff;
+    font-size: 3rem;
+    color: #ffffff;
   }
 
   .hero-subtitle {

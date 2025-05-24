@@ -1,4 +1,6 @@
-/* Fonts & Reset */
+/* ===================
+   RESET & BASE STYLES
+=================== */
 * {
   margin: 0;
   padding: 0;
@@ -16,12 +18,14 @@ body {
   margin: auto;
   padding: 0 1rem;
 }
-/* Header */
+
+/* ===================
+   HEADER STYLES
+=================== */
 .site-header {
-  background: rgba(255, 255, 255, 0.25); /* Light transparent white */
-  backdrop-filter: blur(3px); /* Adds the blur effect */
-  -webkit-backdrop-filter: blur(3px); /* Safari support */
-  border-bottom: none;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   padding: 1rem 0;
   position: absolute;
   top: 0;
@@ -30,7 +34,6 @@ body {
   z-index: 10;
 }
 
-/* Flex container */
 .header-flex {
   display: flex;
   justify-content: space-between;
@@ -38,15 +41,12 @@ body {
   flex-wrap: wrap;
 }
 
-/* Logo and Icons group on the left */
-
 .logo-and-icons {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-/* Logo */
 .logo {
   display: flex;
   flex-direction: column;
@@ -54,23 +54,21 @@ body {
 }
 
 .logo img {
-  height: 50px; /* Adjust based on your design */
+  height: 50px;
   margin-bottom: 0.15rem;
 }
 
 .logo .tagline {
   font-size: 0.8rem;
-  color: #000000;
+  color: #000;
   font-weight: 500;
 }
 
-/* Nav links */
 .nav-links {
   display: flex;
   gap: 1.5rem;
 }
 
-/* Nav link styles */
 .nav-links a {
   text-decoration: none;
   color: #111;
@@ -82,7 +80,6 @@ body {
   color: red;
 }
 
-/* Header Icons */
 .header-icons {
   display: flex;
   align-items: center;
@@ -92,7 +89,7 @@ body {
 .header-icons .icon i {
   font-size: 22px;
   color: black !important;
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.6); /* Glow for visibility */
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
   transition: transform 0.2s ease;
 }
 
@@ -111,68 +108,36 @@ body {
   color: red;
 }
 
-/* Right side container wrapping menu toggle, icons, and nav */
 .right-side {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-left: auto; /* ✅ Push to far right */
+  margin-left: auto;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-    order: 1; /* menu toggle first */
-  }
-
-  .header-icons {
-    order: 2; /* icons after menu toggle */
-    width: auto; /* reset width */
-    justify-content: flex-start;
-    padding-top: 0; /* remove padding for mobile */
-  }
-
-  .nav-links {
-    order: 3; /* nav links last */
-  }
-
-  .right-side {
-    flex-wrap: nowrap;
-    width: auto;
-    justify-content: flex-end;
-    gap: 1rem;
-  }
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: red;
 }
+
+/* ===================
+   HERO SECTION
+=================== */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end; /* Push content to the right */
+  justify-content: flex-end;
   padding: 24vh 8vw 0 8vw;
-  text-align: right; /* Text aligned to the right */
+  text-align: right;
   color: white;
   overflow: hidden;
+  background: url("./images/banner44.png") no-repeat center top / cover;
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("./images/banner44.png");
-  background-position: center top;
   background-position-y: -10vh;
 }
 
@@ -186,14 +151,15 @@ body {
   max-width: 50%;
   text-align: left;
 }
+
 .hero-subtitle {
   font-size: 1.5rem;
   font-weight: 400;
   margin-top: 1rem;
   color: rgb(255, 3, 3);
-  text-shadow: none;
   letter-spacing: 1px;
-} 
+}
+
 .cta-btn {
   position: absolute;
   bottom: 10vh;
@@ -207,23 +173,20 @@ body {
   text-decoration: none;
   border-radius: 50px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  display: inline-block; /* ✅ Ensures it behaves like a button, not a plain text link */
+  display: inline-block;
 }
 
 .cta-btn:hover {
-  background-color: #000000;
+  background-color: #000;
   transform: scale(1.05);
 }
 
-/* Add animation class */
 .hero-title,
 .hero-subtitle {
   opacity: 0;
   animation: fadeInUp 0.8s ease-in-out forwards;
-  animation-delay: 0.2s;
 }
 
-/* Keyframes for fade-in effect */
 @keyframes fadeInUp {
   from {
     transform: translateY(30px);
@@ -235,127 +198,70 @@ body {
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 15vh 5vw 10vh 5vw; /* Adjusted bottom padding for CTA button visibility */
-    text-align: center;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-    margin-top: 11vh; /* Reduced to fit within image */
-    max-width: 100%;
-    text-align: center;
-    color: #ffffff; /* ✅ White title on mobile for visibility */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    animation-delay: 0.1s;
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    color: #ff0000; /* Optional: make subtitle white too */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-    animation-delay: 0.3s;
-  }
-
-  .cta-btn {
-    position: absolute;
-    bottom: 18vh;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff0000;
-    color: white;
-    padding: 1.2rem 2.8rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  .cta-btn:hover {
-    background-color: #000000;
-    transform: scale(1.05);
-  }
-}
-
-/* Section Titles */
-.section-title h3 {
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 2rem 0 1rem;
-}
-
-/* Product Section */
+/* ===================
+   PRODUCT GRID
+=================== */
 .product-section {
-  padding: 3rem 0; /* Added more space at the top and bottom */
+  padding: 3rem 0;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(280px, 1fr)
-  ); /* Improved auto-fit for better responsiveness */
-  gap: 2rem; /* Increased gap for better spacing */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-/* Product Card */
 .product-card {
-  background-color: #fff; /* White background for a clean look */
-  border-radius: 10px; /* Rounder corners for a modern feel */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-  overflow: hidden; /* Ensures no content overflows outside the card */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-5px); /* Slight hover effect for interactivity */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* A deeper shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
 .product-img-wrapper {
   height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff; /* Match the card background */
+  background-color: #fff;
 }
 
 .product-card img {
   width: 100%;
-  height: 250px; /* or whatever fixed height you want */
-  object-fit: contain; /* Shows the full image, preserves aspect ratio */
-  background-color: #fff; /* Optional: fills gaps with a neutral background */
-  padding: 10px; /* Optional: adds space around smaller images */
+  height: 250px;
+  object-fit: contain;
+  padding: 10px;
   transition: opacity 0.3s ease;
 }
 
 .product-card img:hover {
-  opacity: 0.85; /* Slight opacity change for a hover effect */
+  opacity: 0.85;
 }
 
 .product-card h3 {
-  font-size: 1.125rem; /* Slightly larger text for the title */
-  color: #333; /* Darker color for better readability */
+  font-size: 1.125rem;
+  color: #333;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .price {
-  color: #222; /* A more neutral color */
+  color: #222;
   font-weight: 700;
-  margin-bottom: 1.2rem; /* More spacing for a less cramped look */
+  margin-bottom: 1.2rem;
 }
 
 .product-card button {
-  background-color: #333; /* Dark button background */
+  background-color: #333;
   color: white;
-  padding: 0.75rem 1.5rem; /* Slightly larger padding for a modern button */
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 4px;
   font-weight: 600;
@@ -365,98 +271,12 @@ body {
 }
 
 .product-card button:hover {
-  background-color: #555; /* Darker shade on hover */
+  background-color: #555;
 }
 
-/* Responsive Mobile Layout */
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .product-grid {
-    grid-template-columns: 1fr; /* 1 column on very small screens */
-  }
-}
-
-/* Menu icon for mobile */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: red;
-}
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  .header-flex {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .right-side {
-    display: flex;
-    flex-direction: row-reverse; /* ✅ puts menu icon at far right */
-    align-items: center;
-    gap: 1rem;
-    margin-left: auto;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-    order: 1; /* still useful for clarity */
-  }
-
-  .header-icons {
-    order: 2;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    border-top: 1px solid #eee;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    z-index: 100;
-  }
-
-  .nav-links a {
-    padding: 1rem;
-    border-bottom: 1px solid #eee;
-    margin: 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
-/* General styles for the product grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Default 3 columns */
-  gap: 20px;
-  margin-top: 30px;
-}
-
-/* Mobile view: 2 columns layout */
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-  }
-}
-
-/* Categories */
+/* ===================
+   CATEGORIES SECTION
+=================== */
 .categories .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -474,38 +294,27 @@ body {
   justify-content: space-between;
   height: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Light initial shadow */
-  background-color: #fff; /* Optional: make the card white for better contrast */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  background-color: #fff;
 }
 
 .category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Stronger on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 .category-card h4 {
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
 .category-card:hover h4 {
-  color: #111; /* Slightly darker text on hover */
-}
-
-.category-card img {
-  width: 100%;
-  height: auto; /* Let image keep its natural height */
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.categories .section-heading {
-  text-align: center;
+  color: #111;
 }
 
 .image-wrapper {
   width: 100%;
-  aspect-ratio: 4 / 5; /* Controls consistent height:width */
+  aspect-ratio: 4 / 5;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -520,12 +329,13 @@ body {
   object-fit: contain;
 }
 
-/* Promo Banner */
+/* ===================
+   PROMO BANNER
+=================== */
 .promo-banner {
   background: url("./images/bannerpromowww.png") no-repeat center/cover;
-
   color: white;
-  text-align: left; /* Left align text */
+  text-align: left;
   padding: 8rem 5rem;
   position: relative;
   display: flex;
@@ -563,7 +373,6 @@ body {
   line-height: 1.6;
   color: #f2f2f2;
 }
-
 .cta-button {
   display: inline-block;
   padding: 12px 28px;
@@ -579,6 +388,139 @@ body {
 
 .cta-button:hover {
   background-color: #dd0000;
+}
+
+/* ===================
+   RESPONSIVE STYLES
+=================== */
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 0.3rem; /* reduce space */
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem; /* reduce space */
+  }
+
+  .cta-button {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    margin-top: 0.3rem; /* bring it closer */
+    position: static; /* Ensure no absolute positioning leaks here */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+    margin-top: 10vh;
+    margin-bottom: 0.4rem; /* Slightly more space for better hierarchy */
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem; /* Slightly more space to separate from button */
+  }
+
+  .cta-button {
+    padding: 12px 22px; /* Slightly bigger tap area */
+    font-size: 1rem; /* More readable */
+    margin-top: 0.4rem; /* Balanced spacing */
+    position: static; /* Remove absolute, so it flows naturally */
+  }
+
+  .header-flex {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    border-top: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .right-side {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 1;
+    font-size: 1.8rem;
+    color: red;
+    margin-left: auto;
+  }
+
+  .header-icons {
+    order: 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12vh 5vw 10vh 5vw;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    margin-top: 10vh;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.9rem;
+    margin-bottom: 0.1rem; /* reduced gap */
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem; /* reduced gap */
+  }
+
+  .cta-button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    margin-top: 0.15rem; /* reduced gap */
+    position: static;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Responsive Design */
@@ -607,7 +549,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-      background-position: right center; /* 👈 shift focus to right side */
   }
 
   .promo-content {
@@ -626,7 +567,7 @@ body {
   }
 
   .cta-button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-size: 1rem;
   }
 }

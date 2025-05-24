@@ -143,8 +143,8 @@ body {
 .hero-title {
   font-family: "Cinzel", serif;
   font-size: 4rem;
-  color: rgba(255, 255, 255, 255);
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+ color: white; /* Make the text color white */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Darker shadow to improve visibility */
   letter-spacing: 2px;
   margin-top: 6vh;
   max-width: 50%;
@@ -571,7 +571,8 @@ body {
   .hero-title {
     top: 40%;
     font-size: 3rem;
-    color: #ffffff;
+   color: white; /* Make the text color white */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Darker shadow to improve visibility */
   }
 
   .hero-subtitle {
@@ -615,7 +616,8 @@ body {
   .hero-title {
     top: 40%;
     font-size: 3rem;
-    color: #ffffff;
+    color: white; /* Make the text color white */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Darker shadow to improve visibility */
   }
 
   .hero-subtitle {
@@ -652,6 +654,8 @@ body {
 
   .hero-title {
     font-size: 4.rem;
+     color: white; /* Make the text color white */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Darker shadow to improve visibility */
   }
 
   .hero-subtitle {

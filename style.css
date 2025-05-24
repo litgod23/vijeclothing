@@ -136,10 +136,9 @@ body {
   text-align: right;
   color: white;
   overflow: hidden;
-  background: url("../images/banner44.png") no-repeat center center / cover; /* Standard cover background */
+  background: url("./images/banner44.png") no-repeat center center / cover; /* Standard cover background */
   background-position: center center; /* Make sure background is centered */
 }
-
 
 .hero-title {
   font-family: "Cinzel", serif;
@@ -161,16 +160,19 @@ body {
 }
 
 .cta-btn {
-  margin-top: 2rem;
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #ff0000;
   color: white;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
+  padding: 1.2rem 2.8rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  text-decoration: none;
   border-radius: 50px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  text-align: center;
-  text-decoration: none;
+  display: inline-block;
 }
 
 .cta-btn:hover {

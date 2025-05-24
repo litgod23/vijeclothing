@@ -571,8 +571,8 @@ body {
   .hero-title {
     top: 40%;
     font-size: 3rem;
-   color: white; /* Make the text color white */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Darker shadow to improve visibility */
+  color: black; /* Make the text color black */
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7); /* White shadow to stand out against black text */
   }
 
   .hero-subtitle {

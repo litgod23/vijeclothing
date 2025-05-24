@@ -195,53 +195,15 @@ body {
   letter-spacing: 1px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20vh 5vw 0 5vw;
-    text-align: center;
-     color: rgba(201, 201, 201, 0.97);
-  text-shadow: 1px 1px 4px rgba(58, 58, 58, 0.3);
-  }
-
-  .hero-title {
-    font-size: 4.5rem;
-    margin-top: 19vh;
-    max-width: 100%;
-    text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  .hero-subtitle {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
+/* Add animation class */
+.hero-title,
+.hero-subtitle {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+  animation-delay: 0.2s;
 }
 
-/* Shop button centered at bottom */
-.cta-btn {
-  position: absolute;
-  bottom: 10vh;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ff0000;
-  color: white;
-  padding: 1.2rem 2.8rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-btn:hover {
-  background-color: #000000;
-  transform: scale(1.05);
-}
-
+/* Keyframes for fade-in effect */
 @keyframes fadeInUp {
   from {
     transform: translateY(30px);
@@ -253,18 +215,51 @@ body {
   }
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 3rem; /* Scale down for smaller devices */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15vh 5vw 10vh 5vw; /* Adjusted bottom padding for CTA button visibility */
+    text-align: center;
   }
 
-  .hero p {
-    font-size: 1.2rem; /* Scale text size for mobile devices */
+  .hero-title {
+    font-size: 3rem;
+    margin-top: 11vh; /* Reduced to fit within image */
+    max-width: 100%;
+    text-align: center;
+    color: #ffffff; /* ✅ White title on mobile for visibility */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    animation-delay: 0.1s;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #ff0000; /* Optional: make subtitle white too */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    animation-delay: 0.3s;
   }
 
   .cta-btn {
-    padding: 0.8rem 1.8rem; /* Adjust button padding for mobile */
-    font-size: 1rem;
+    position: absolute;
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff0000;
+    color: white;
+    padding: 1.2rem 2.8rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .cta-btn:hover {
+    background-color: #000000;
+    transform: scale(1.05);
   }
 }
 

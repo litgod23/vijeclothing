@@ -126,24 +126,18 @@ body {
    HERO SECTION
 =================== */
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  min-height: 100vh;
-  padding: 10vh 5vw;
-  background: url("./images/banner44.png") no-repeat center center;
-  background-size: cover;  /* Cover ensures the background always covers the screen */
-  background-position: center center;
-  background-attachment: fixed;
   position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 24vh 8vw 0 8vw;
+  text-align: right;
+  color: white;
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    background-size: contain;  /* Prevent zoom on smaller screens */
-  }
+  background: url("../images/banner44.png") no-repeat center center / cover; /* Standard cover background */
+  background-position: center center; /* Make sure background is centered */
 }
 
 
